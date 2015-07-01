@@ -1,0 +1,233 @@
+﻿<app>
+	<!--LEGO 2
+	
+	
+	modifed data       image tag need
+	93-12-19
+	
+	
+	
+	-->
+	
+	<!--debug/-->
+	
+	
+	<page id="home">
+		<music>Data/Drums of the Deep.mp3</music>
+		<type>home</type>
+		<title>home_l</title>
+		<image></image>
+		<content></content>
+		<links>
+			<link level="1" name="خبر" id="news_page" icon=""/>
+			<link level="1" name="واقعیت ها را ببینیم" id="ar_page" icon=""/>
+			<link level="1" name="مسابقه" id="competition_page" icon=""/>
+			<link level="1" name="بازی" id="games_page" icon=""/>
+			<link level="1" name="گالری" id="gallery_page" icon=""/>
+			<link level="1" name="کلاس ها" id="classes_page" icon=""/>
+		</links>
+	</page>
+	
+	
+	
+	<page id="ar_page">
+		<type>augmentedReality.ARPage</type>
+		<title>صفحه</title>
+		<image></image>
+		<content w="250" h="250"></content>
+		<links>
+			<link level="" name="8" id="ar_8" icon="Data/qrs/08.png"/>
+			<link level="" name="11" id="ar_11" icon="Data/qrs/11.png"/>
+			<link level="" name="14" id="ar_14" icon="Data/qrs/14.png"/>
+			<link level="" name="15" id="ar_15" icon="Data/qrs/15.png"/>
+			<link level="" name="19" id="ar_19" icon="Data/qrs/19.png"/>
+			<link level="" name="20" id="ar_20" icon="Data/qrs/20.png"/>
+			<link level="" name="24" id="ar_24" icon="Data/qrs/24.png"/>
+			<link level="" name="25" id="ar_25" icon="Data/qrs/25.png"/>
+			<link level="" name="29" id="ar_29" icon="Data/qrs/29.png"/>
+			<link level="" name="31" id="ar_31" icon="Data/qrs/31.png"/>
+			<link level="" name="33" id="ar_33" icon="Data/qrs/33.png"/>
+			<link level="" name="34-1" id="ar_34-1" icon="Data/qrs/34-1.png"/>
+			<link level="" name="34-2" id="ar_34-2" icon="Data/qrs/34-2.png"/>
+			<link level="" name="36" id="ar_36" icon="Data/qrs/36.png"/>
+			<link level="" name="37" id="ar_37" icon="Data/qrs/37.png"/>
+			<link level="" name="43" id="ar_43" icon="Data/qrs/43.png"/>
+			<link level="" name="44" id="ar_44" icon="Data/qrs/44.png"/>
+			<link level="" name="45" id="ar_45" icon="Data/qrs/45.png"/>
+			<link level="" name="46" id="ar_46" icon="Data/qrs/46.png"/>
+			<link level="" name="47" id="ar_47" icon="Data/qrs/47.png"/>
+			<link level="" name="49-1" id="ar_49-1" icon="Data/qrs/49-1.png"/>
+			<link level="" name="49-2" id="ar_49-2" icon="Data/qrs/49-2.png"/>
+			<link level="" name="51" id="ar_51" icon="Data/qrs/51.png"/>
+			<link level="" name="52" id="ar_52" icon="Data/qrs/52.png"/>
+			<link level="" name="53" id="ar_53" icon="Data/qrs/53.png"/>
+			<link level="" name="54" id="ar_54" icon="Data/qrs/54.png"/>
+			<link level="" name="55" id="ar_55" icon="Data/qrs/55.png"/>
+			<link level="" name="60" id="ar_60" icon="Data/qrs/60.png"/>
+			<link level="" name="64" id="ar_64" icon="Data/qrs/64.png"/>
+			<link level="" name="65" id="ar_65" icon="Data/qrs/65.png"/>
+			<link level="" name="66" id="ar_66" icon="Data/qrs/66.png"/>
+		</links>
+	</page>
+	
+	
+	
+	
+	<page id="ar_8">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 8</title>
+		<image>Data/videos/2/2-ev3 program.flv</image>
+	</page>
+	<page id="ar_11">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 11</title>
+		<image>Data/videos/3/3-brick programming.flv</image>
+	</page>
+	<page id="ar_14">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 14</title>
+		<image>Data/videos/3/CURLING- WWCC 2012 - Shots of the Week.flv</image>
+	</page>
+	<page id="ar_15">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 15</title>
+		<image>Data/videos/5/turn.flv</image>
+	</page>
+	<page id="ar_19">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 19</title>
+		<image>Data/videos/6/Audi's automatic driving for parking.flv</image>
+	</page>
+	<page id="ar_20">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 20</title>
+		<image>Data/videos/7/Ultrasonic Sensors for the Factory Automation Industry.flv</image>
+	</page>
+	<page id="ar_24">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 24</title>
+		<image>Data/videos/8/8-paiin nayoftadan continue.flv</image>
+	</page>
+	<page id="ar_25">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 25</title>
+		<image>Data/videos/8/8-paiin nayoftadan.flv</image>
+	</page>
+	<page id="ar_29">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 29</title>
+		<image>Data/videos/9/9-khate 3.flv</image>
+	</page>
+	<page id="ar_31">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 31</title>
+		<image>Data/videos/10/10-1light.flv</image>
+	</page>
+	<page id="ar_33">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 33</title>
+		<image>Data/videos/11/11-90 degree.flv</image>
+	</page>
+	
+	<page id="ar_34-1">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 34 (1)</title>
+		<image>Data/videos/11/iTube_10880955-How Segway Works.flv</image>
+	</page>
+	<page id="ar_34-2">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 34 (2)</title>
+		<image>Data/videos/12/12-almas kamel.flv</image>
+	</page>
+	<page id="ar_36">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 36</title>
+		<image>Data/videos/12/The Diamond Robbery - Scene - Dhoom 2.flv</image>
+	</page>
+	<page id="ar_37">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 37</title>
+		<image>Data/videos/13/13-3switch project.flv</image>
+	</page>
+	<page id="ar_43">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 43</title>
+		<image>Data/videos/14/14-tank.flv</image>
+	</page>
+	<page id="ar_44">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 44</title>
+		<image>Data/videos/14/iTube_10876541-New Russian Weapons 2014 - Secret Main Battle Tank T90MS2.flv</image>
+	</page>
+	<page id="ar_45">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 45</title>
+		<image>Data/videos/15/15-color sorter.flv</image>
+	</page>
+	<page id="ar_46">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 46</title>
+		<image><![CDATA[Data/videos/15/Sorting Machine - Skittles and M&M's.flv]]></image>
+	</page>
+	<page id="ar_47">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 47</title>
+		<image>Data/videos/16/16-2light.flv</image>
+	</page>
+	<page id="ar_49-1">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 49(1)</title>
+		<image>Data/videos/16/16-joystick.flv</image>
+	</page>
+	<page id="ar_49-2">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 49(1)</title>
+		<image>Data/videos/17/17-play note.flv</image>
+	</page>
+	<page id="ar_51">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 51</title>
+		<image>Data/videos/17/iTube_10773301-Lego Mindstorm NXT Guitar.flv</image>
+	</page>
+	<page id="ar_52">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 52</title>
+		<image>Data/videos/18/18-pod.flv</image>
+	</page>
+	<page id="ar_53">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 53</title>
+		<image>Data/videos/18/Personal transport pods unveiled at Heathrow Airport.flv</image>
+	</page>
+	<page id="ar_54">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 54</title>
+		<image>Data/videos/19/19-jaroo kamel.flv</image>
+	</page>
+	<page id="ar_55">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 55</title>
+		<image>Data/videos/19/iTube_10882199-Samsung SR-8855 NaviBot - Automatic Vacuum Cleaner Robot - Review.flv</image>
+	</page>
+	<page id="ar_60">
+		<type>contents.displayPages.StaticImageText</type>
+		<title>صفحه 60</title>
+		<image width="768">Data/videos/20/20-smart house.jpg</image>
+	</page>
+	<page id="ar_64">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 64</title>
+		<image>Data/videos/20/iTube_10776830-House of the Future Shows off Latest in Home Technology.flv</image>
+	</page>
+	<page id="ar_65">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 65</title>
+		<image>Data/videos/21/21-brick datalog.flv</image>
+	</page>
+	<page id="ar_66">
+		<type>lego.pages.videoPage</type>
+		<title>صفحه 66</title>
+		<image>Data/videos/21/iTube_11972170-Leica DISTO D110 Small size, big possibilities.flv</image>
+	</page>
+	
+</app>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/akqa_shared_library/!svn/ver/94/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types
+END
+SoundItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/akqa_shared_library/!svn/ver/75/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types/SoundItem.as
+END
+BaseLoaderItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/akqa_shared_library/!svn/ver/86/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types/BaseLoaderItem.as
+END
+BinaryTextItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/akqa_shared_library/!svn/ver/94/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types/BinaryTextItem.as
+END
+LoadedItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/akqa_shared_library/!svn/ver/75/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types/LoadedItem.as
+END
+ImageItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/akqa_shared_library/!svn/ver/94/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types/ImageItem.as
+END
+TextItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/akqa_shared_library/!svn/ver/94/AKQA_Shared_Library_AS3_Version2/src/com/akqa/dc/base/baseLoader/types/TextItem.as
+END

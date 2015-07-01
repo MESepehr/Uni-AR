@@ -1,0 +1,89 @@
+8
+
+dir
+869
+http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/typography/fonts
+http://papervision3d.googlecode.com/svn
+
+
+
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+071aa1e1-232a-0410-a790-59abb25ab4c3
+
+HelveticaBold.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+fb3576ebad336de75ee31ea287eeca60
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+HelveticaLight.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+f1f9362b0a234e628d7240b63cf42d78
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+HelveticaMedium.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+cd4650cf6adb4c93c4062cebfab433bf
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+HelveticaRoman.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+39fc764af85b2fe3d2e3273a300a356c
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+use of fonts.txt
+file
+
+http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/typography/fonts/use%20of%20fonts.txt
+
+
+2009-01-26T15:15:02.000000Z
+86c16a58ee4410532fdccedbd6ac1d7d
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+has-props
+

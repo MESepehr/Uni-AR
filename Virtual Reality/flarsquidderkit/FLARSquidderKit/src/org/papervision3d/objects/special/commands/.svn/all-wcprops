@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/863/trunk/as3/trunk/src/org/papervision3d/objects/special/commands
+END
+BeginFill.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/839/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/BeginFill.as
+END
+EndFill.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/839/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/EndFill.as
+END
+CurveTo.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/839/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/CurveTo.as
+END
+LineTo.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/839/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/LineTo.as
+END
+MoveTo.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/839/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/MoveTo.as
+END
+IVectorShape.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/839/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/IVectorShape.as
+END
+LineStyle.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/863/trunk/as3/trunk/src/org/papervision3d/objects/special/commands/LineStyle.as
+END

@@ -1,0 +1,55 @@
+8
+
+dir
+869
+http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/core/clipping
+http://papervision3d.googlecode.com/svn
+
+
+
+2008-11-12T16:14:30.823384Z
+776
+tim.knip
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+071aa1e1-232a-0410-a790-59abb25ab4c3
+
+DefaultClipping.as
+file
+
+
+
+
+2009-01-26T15:15:04.000000Z
+a374395e749a0214265546b44dc9228c
+2008-11-12T16:14:30.823384Z
+776
+tim.knip
+
+FrustumClipping.as
+file
+
+
+
+
+2009-01-26T15:15:04.000000Z
+13024fc785f0b757f8963a28137a097e
+2008-11-12T16:14:30.823384Z
+776
+tim.knip
+
+draw
+dir
+

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/717/trunk/as3/trunk/src/nochump/util/zip
+END
+ZipOutput.as
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/708/trunk/as3/trunk/src/nochump/util/zip/ZipOutput.as
+END
+Deflater.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/717/trunk/as3/trunk/src/nochump/util/zip/Deflater.as
+END
+ZipEntry.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/708/trunk/as3/trunk/src/nochump/util/zip/ZipEntry.as
+END
+Inflater.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/708/trunk/as3/trunk/src/nochump/util/zip/Inflater.as
+END
+ZipConstants.as
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/708/trunk/as3/trunk/src/nochump/util/zip/ZipConstants.as
+END
+CRC32.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/708/trunk/as3/trunk/src/nochump/util/zip/CRC32.as
+END
+ZipError.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/708/trunk/as3/trunk/src/nochump/util/zip/ZipError.as
+END
+ZipFile.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/717/trunk/as3/trunk/src/nochump/util/zip/ZipFile.as
+END

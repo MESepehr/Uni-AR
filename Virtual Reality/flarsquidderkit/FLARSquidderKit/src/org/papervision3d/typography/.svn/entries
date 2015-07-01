@@ -1,0 +1,79 @@
+8
+
+dir
+869
+http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/typography
+http://papervision3d.googlecode.com/svn
+
+
+
+2009-01-14T20:50:59.060917Z
+863
+barcinski
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+071aa1e1-232a-0410-a790-59abb25ab4c3
+
+Font3D.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+d75ec067d2421280d1ec63315da69a13
+2009-01-14T20:50:59.060917Z
+863
+barcinski
+
+Letter3D.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+b60511f890b9f64809fb75c1acc7866b
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+Text3D.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+d108c4b824a80e1c142c29085d46d380
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+VectorLetter3D.as
+file
+
+
+
+
+2009-01-26T15:15:02.000000Z
+b05dbb0e3a5315a4272956cdde773852
+2008-12-07T22:43:15.694793Z
+839
+barcinski
+
+fonts
+dir
+
