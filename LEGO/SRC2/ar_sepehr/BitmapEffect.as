@@ -62,7 +62,7 @@ package ar_sepehr
 			var Bsum:Number = sumVector(histo[2]);
 			
 			var sum:Number = Rsum+Gsum+Bsum ;
-			trace("sum : "+sum);
+			//trace("sum : "+sum);
 			
 			//trace("Rsum ; "+Rsum/Bsum);
 			//trace("Rsum ; "+Gsum/Rsum);
@@ -113,6 +113,7 @@ package ar_sepehr
 			
 			newBitmap.threshold(newBitmap,newBitmap.rect,new Point(),"<=",midColor,0xff000000,0x000000ff,false);
 			newBitmap.threshold(newBitmap,newBitmap.rect,new Point(),">",midColor,0xffffffff,0x000000ff,false);
+			newBitmap.threshold(sourceBitmap,newBitmap.rect,new Point(),"<",0xff000000,0x00000000,0xff000000,false);
 			
 			
 				//2 time somoothing
@@ -174,7 +175,7 @@ package ar_sepehr
 			
 			if(blackRect.top!=0 && blackRect.right!=ObjectArea.width && blackRect.bottom!=ObjectArea.height && blackRect.left!=0)
 			{
-				trace("Small rectangle founded on Object Area");
+				//trace("Small rectangle founded on Object Area");
 				//Black are founded in this image
 				var zoomRectangle:Rectangle = new Rectangle(blackRect.x+ObjectArea.x,blackRect.y+ObjectArea.y,blackRect.width,blackRect.height);
 				

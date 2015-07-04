@@ -18,9 +18,9 @@ package augmentedReality.ar
 	[Event(name="MATCH", type="augmentedReality.ar.CompairEvent")]
 	public class ARManager extends Sprite
 	{
-		public static const debug:Boolean = false ;
+		public static const debug:Boolean = true ;
 		
-		public static var debug_tested_index:uint = 23 ;
+		public static var debug_tested_index:uint = 0 ;
 		
 		//private var cameraMC:MovieClip ;
 		
@@ -153,7 +153,7 @@ package augmentedReality.ar
 				this.addChild(bit);
 			}
 			//applyBWFilter(bit.bitmapData);
-			bit.bitmapData = BitmapEffect.clearBlackWhitheImage(BitmapEffect.blackAndWhite(bit.bitmapData),1,false);
+			bit.bitmapData = BitmapEffect.blackAndWhite(BitmapEffect.colorBalanceGrayScale(bit.bitmapData));
 		}
 		
 		
@@ -216,31 +216,31 @@ package augmentedReality.ar
 			//return bitmapData ;
 		}*/
 		
-		private function betweenColor():uint
+		/*private function betweenColor():uint
 		{
 			//---++
 			return (histoMax+histoMax+histoMin)/3 ;
 			//Old Method
 			//return Math.max(0,Math.min(histoMaxIndex+histoDelta,255));
-		}
+		}*/
 		
-		private function histoCalc(val:Number,index:uint,nothing:*=null)
+		/*private function histoCalc(val:Number,index:uint,nothing:*=null)
 		{
 			if(val>20)
 			{
 				histoMax = Math.max(index,histoMax);
 				histoMin = Math.min(index,histoMin);
 			}
-		}
+		}*/
 		
-		private function histoCalcOld(val:Number,index:uint,nothing:*=null)
+		/*private function histoCalcOld(val:Number,index:uint,nothing:*=null)
 		{
 			if(histoMax<val)
 			{
 				histoMax = val;
 				histoMaxIndex = index
 			}
-		}
+		}*/
 		
 		public function compair(camBitData:BitmapData,comairItems:uint=0):void
 		{
@@ -283,16 +283,24 @@ package augmentedReality.ar
 			//trace("item.stage : "+item.stage);
 			//var compairTime:Number = getTimer();
 			difrencesBitmapData = item.bitmapData.compare(compairableImage) as BitmapData;
+			
 			//I have to remove pixels under alpha<1 under the item bitmapData
 			var difrences:uint = 0;
 			if(difrencesBitmapData!=null)
 			{
-				difrencesBitmapData.threshold(item.bitmapData,imagedRectangle,new Point(),'==',0x00000000,0x00000000,0xff000000,false);
+				//difrencesBitmapData.threshold(item.bitmapData,imagedRectangle,new Point(),'==',0x00000000,0x00000000,0xff000000,false);
+				difrencesBitmapData.threshold(item.bitmapData,imagedRectangle,new Point(),'<',0xff000000,0x00000000,0xff000000,false);
 				difrences = difrencesBitmapData.threshold(difrencesBitmapData,imagedRectangle,new Point(),'>',0x00000000,0xffff0000,0xff000000);
+				//difrencesBitmapData.threshold(item.bitmapData,imagedRectangle,new Point(),'>',0xff000000,0x00ff0000,0xff000000);
+				if(debug && debug_tested_index == index)
+				{
+					difrenceDebugger.bitmapData = difrencesBitmapData ;
+					return ;
+				}
 			}
-			if(debug && debug_tested_index == index)
+			else
 			{
-				difrenceDebugger.bitmapData = difrencesBitmapData ;
+				//trace("Cant compair");
 			}
 			//trace("compair time : "+(getTimer()-compairTime));
 			//trace("difrences : "+difrences);

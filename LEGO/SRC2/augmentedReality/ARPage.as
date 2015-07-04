@@ -29,7 +29,7 @@ package augmentedReality
 	
 	public class ARPage extends MovieClip implements DisplayPageInterface
 	{
-		private const debug:Boolean = false ;
+		private const debug:Boolean = true ;
 		
 		private var arManager:ARManager ;
 		
@@ -100,8 +100,8 @@ package augmentedReality
 			//movedImageMC = Obj.get("croped_image_box_mc",cameraContainerMC);
 				//movedImageMC.visible = false ;
 			
-			cW = cameraMC.width ;
-			cH = cameraMC.height ;
+			cW = imageAreaMC.width ;//cameraMC.width ;
+			cH = imageAreaMC.height ;//cameraMC.height ;
 			
 			//debug line
 				//cam = new MTeamCamera(cameraMC);
@@ -173,8 +173,8 @@ package augmentedReality
 			ImagesW = pageData.contentW;
 			ImagesH = pageData.contentH;
 			
-			trace("ImagesW : "+ImagesW);
-			trace("ImagesH : "+ImagesH);
+			//trace("ImagesW : "+ImagesW);
+		//	trace("ImagesH : "+ImagesH);
 			
 			camScalePrecent = ImagesW/cW; 
 			
@@ -185,7 +185,6 @@ package augmentedReality
 			{
 				cameraFrame = new Bitmap(camBitData);
 			}
-			
 			arManager = new ARManager(ImagesW,ImagesH);
 			arManager.addEventListener(CompairEvent.MATCH,matchFounds);
 			this.addChild(arManager);
@@ -210,7 +209,7 @@ package augmentedReality
 			if(e.difrences<12000/*Number(maxdifrence_txt.text)*/)
 			{
 				myLinkCollector.addLink(e.linkData,e.difrences);
-				//trace("Link found : "+e.linkData.name+' > difences are : '+e.difrences);
+				trace("Link found : "+e.linkData.name+' > difences are : '+e.difrences);
 			}
 			//difrences_txt.text = e.difrences.toString();
 		}
@@ -241,12 +240,14 @@ package augmentedReality
 				camBitData.draw(cameraMC,new Matrix(camScalePrecent,0,0,camScalePrecent));
 				camBitData = smoother.smooth(camBitData);
 				
+				//trace("camBitData : "+camBitData.width);
+				
 				var correctColorBitmapData:BitmapData = BitmapEffect.colorBalanceGrayScale(camBitData);
 				var blackAndWightBitmapData:BitmapData = BitmapEffect.blackAndWhite(correctColorBitmapData);
 				
 				
-				var camImageBitmapdata:BitmapData = new BitmapData(cameraMC.width,cameraMC.height,false,0);
-				camImageBitmapdata.draw(cameraMC);
+				/*var camImageBitmapdata:BitmapData = new BitmapData(cameraMC.width,cameraMC.height,false,0);
+				camImageBitmapdata.draw(cameraMC);*/
 				//foundedObject.bitmapData = blackAndWightBitmapData.clone() ;
 				
 				var images:Vector.<BitmapData> = BitmapEffect.matchImages(blackAndWightBitmapData,imageRect,areaRect,objectRect,correctColorBitmapData);
