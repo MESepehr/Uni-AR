@@ -52,8 +52,6 @@ package
 		
 		public function ar_camera()
 		{
-			
-			
 			imageAreaMC = Obj.get("image_area_mc",this);
 			ObjectAreaMC = Obj.get("object_area_mc",this);
 			ObjectMC = Obj.get("object_mc",this);

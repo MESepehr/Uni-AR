@@ -1,5 +1,7 @@
 package augmentedReality.ar
 {
+	import ar_sepehr.BitmapEffect;
+	
 	import contents.LinkData;
 	
 	import flash.display.Bitmap;
@@ -150,7 +152,8 @@ package augmentedReality.ar
 				bit.x = 400 ;
 				this.addChild(bit);
 			}
-			applyBWFilter(bit.bitmapData);
+			//applyBWFilter(bit.bitmapData);
+			bit.bitmapData = BitmapEffect.clearBlackWhitheImage(BitmapEffect.blackAndWhite(bit.bitmapData),1,false);
 		}
 		
 		
@@ -162,7 +165,7 @@ package augmentedReality.ar
 		
 		
 	///////////////////////////////
-		public function applyBWFilter(bitmapData:BitmapData):void
+		/*public function applyBWFilter(bitmapData:BitmapData):void
 		{
 			bitmapData.lock();
 				var transparetnItem:BitmapData = bitmapData.clone();
@@ -187,9 +190,9 @@ package augmentedReality.ar
 				bitmapData.threshold(transparetnItem,imagedRectangle,new Point(),'==',0x00000000,0x00000000,0xff000000,false);
 			bitmapData.unlock();
 			//return bitmapData ;
-		}
+		}*/
 		
-		/**This is same as applyBWfilter but has camera smooth and it is copied for better performance.*/
+		/**This is same as applyBWfilter but has camera smooth and it is copied for better performance.
 		public function applyBWFilterForCamera(bitmapData:BitmapData):void
 		{
 			bitmapData.lock();
@@ -211,7 +214,7 @@ package augmentedReality.ar
 				bitmapData.threshold(bitmapData,imagedRectangle,new Point(),'>',betweenNumber,0xffffffff,0x00ffffff,false);
 			bitmapData.unlock();
 			//return bitmapData ;
-		}
+		}*/
 		
 		private function betweenColor():uint
 		{
@@ -251,7 +254,7 @@ package augmentedReality.ar
 				compairOnOneTime = comairItems ;
 			}
 			//return;
-			applyBWFilterForCamera(camBitData);
+			//applyBWFilterForCamera(camBitData);
 			compairableImage = camBitData ;
 			var i:uint,l:uint = patterns.length,index:uint=0;
 			compairOnOneTime = Math.min(l,compairOnOneTime);

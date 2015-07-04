@@ -79,7 +79,7 @@ package augmentedReality.ar
 			var loadedObject:DisplayObject = patternLoader.content ;
 			
 			var capturedBitmap:BitmapData = new BitmapData(cW,cH,true,0x00000000);
-			capturedBitmap.draw(loadedObject,new Matrix(cW/loadedObject.width,0,0,cH/loadedObject.height),null,null,null,true)
+			capturedBitmap.draw(loadedObject,new Matrix(cW/loadedObject.width,0,0,cH/loadedObject.height),null,null,null,true);
 			orginalPattern = capturedBitmap ;
 			patternLoader.unloadAndStop();
 			

@@ -2,6 +2,8 @@ package augmentedReality
 {
 	import appManager.event.AppEventContent;
 	
+	import ar_sepehr.BitmapEffect;
+	
 	import augmentedReality.ar.ARManager;
 	import augmentedReality.ar.CompairEvent;
 	import augmentedReality.dataManager.LinkCollector;
@@ -20,6 +22,7 @@ package augmentedReality
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Matrix;
+	import flash.geom.Rectangle;
 	import flash.text.TextField;
 
 
@@ -47,6 +50,7 @@ package augmentedReality
 		
 		/**I removed the camera from stage to increase performance*/
 		private var cameraFrame:Bitmap,
+					foundedObject:Bitmap,
 					camBitData:BitmapData,
 					camScalePrecent:Number;
 					
@@ -58,16 +62,44 @@ package augmentedReality
 		
 		private var allContentButtonMC:MovieClip ;
 		
+		
+		
+		private var imageAreaMC:MovieClip,
+					ObjectAreaMC:MovieClip,
+					ObjectMC:MovieClip;//,
+					//movedImageMC:MovieClip;
+
+		private var cameraContainerMC:MovieClip;
+		
 		public function ARPage()
 		{
 			super();
+			
+			var bitData:BitmapData = new BitmapData(10,10,false,0xff0000);
+			foundedObject = new Bitmap(bitData);
 			
 			myDynamicLinks = Obj.findThisClass(DynamicLinks,this,true);
 			
 			myLinkCollector = new LinkCollector();
 			myLinkCollector.addEventListener(Event.CHANGE,updateMyLinks);
 			updateMyLinks(null);
-			cameraMC = Obj.get("camera_area_mc",Obj.get("camera_area_mc",this));
+			
+			cameraContainerMC = Obj.get("camera_area_mc",this) ;
+			
+			cameraMC = Obj.get("camera_area_mc",cameraContainerMC);
+			
+			
+			imageAreaMC = Obj.get("image_area_mc",cameraContainerMC);
+				imageAreaMC.visible = false ;
+				
+				
+			ObjectAreaMC = Obj.get("object_area_mc",cameraContainerMC);
+				ObjectAreaMC.visible = false ;
+			ObjectMC = Obj.get("object_mc",cameraContainerMC);
+				ObjectMC.visible = false ;
+			//movedImageMC = Obj.get("croped_image_box_mc",cameraContainerMC);
+				//movedImageMC.visible = false ;
+			
 			cW = cameraMC.width ;
 			cH = cameraMC.height ;
 			
@@ -75,10 +107,10 @@ package augmentedReality
 				//cam = new MTeamCamera(cameraMC);
 				//return;
 			
-			(care_txt as TextField).addEventListener(Event.CHANGE,function(e){
+			/*(care_txt as TextField).addEventListener(Event.CHANGE,function(e){
 				ARManager.debug_tested_index = Number(care_txt.text);
 			});
-			ARManager.debug_tested_index = Number(care_txt.text);
+			ARManager.debug_tested_index = Number(care_txt.text);*/
 			
 			buttonMC = Obj.get("touch_mc",this);
 			buttonMC.stop();
@@ -87,6 +119,11 @@ package augmentedReality
 			allContentButtonMC = Obj.get("all_contents_mc",this);
 			allContentButtonMC.buttonMode = true ;
 			allContentButtonMC.addEventListener(MouseEvent.CLICK,openAll);
+			
+			cameraContainerMC.addChild(foundedObject);
+			foundedObject.x = imageAreaMC.x ;
+			foundedObject.y = imageAreaMC.y ;
+			
 		}
 		
 		private function openAll(e:MouseEvent)
@@ -141,7 +178,7 @@ package augmentedReality
 			
 			camScalePrecent = ImagesW/cW; 
 			
-			smoother = new Smoother(ImagesW,ImagesH,5);
+			smoother = new Smoother(ImagesW,ImagesH,3);
 			
 			camBitData = new BitmapData(ImagesW,ImagesH,false);
 			if(debug)
@@ -170,32 +207,71 @@ package augmentedReality
 		
 		private function matchFounds(e:CompairEvent)
 		{
-			if(e.difrences<Number(maxdifrence_txt.text))
+			if(e.difrences<12000/*Number(maxdifrence_txt.text)*/)
 			{
 				myLinkCollector.addLink(e.linkData,e.difrences);
-				trace("Link found : "+e.linkData.name+' > difences are : '+e.difrences);
+				//trace("Link found : "+e.linkData.name+' > difences are : '+e.difrences);
 			}
-			difrences_txt.text = e.difrences.toString();
+			//difrences_txt.text = e.difrences.toString();
 		}
 		
 		protected function compairAll(event:Event):void
 		{
-			if(activeFlag)
+			if(true || activeFlag)
 			{
+				var imageRect:Rectangle = imageAreaMC.getBounds(cameraContainerMC) ;
+				imageRect.x = imageRect.x -cameraMC.x ;
+				imageRect.y = imageRect.y -cameraMC.y ;
+				imageRect = scaleRect(imageRect,camScalePrecent);
+
+				var areaRect:Rectangle = ObjectAreaMC.getBounds(cameraContainerMC) ;
+				areaRect.x = areaRect.x -cameraMC.x ;
+				areaRect.y = areaRect.y -cameraMC.y ;
+				areaRect = scaleRect(areaRect,camScalePrecent);
+				
+				var objectRect:Rectangle = ObjectMC.getBounds(cameraContainerMC) ;
+				objectRect.x = objectRect.x -cameraMC.x ;
+				objectRect.y = objectRect.y -cameraMC.y ;
+				objectRect = scaleRect(objectRect,camScalePrecent);
 				//trace("cjso");
 				myLinkCollector.deleteOldLinks();
 				// TODO Auto-generated method stub
 				camBitData.lock();
+				//trace("camScalePrecent : "+camScalePrecent);
 				camBitData.draw(cameraMC,new Matrix(camScalePrecent,0,0,camScalePrecent));
 				camBitData = smoother.smooth(camBitData);
+				
+				var correctColorBitmapData:BitmapData = BitmapEffect.colorBalanceGrayScale(camBitData);
+				var blackAndWightBitmapData:BitmapData = BitmapEffect.blackAndWhite(correctColorBitmapData);
+				
+				
+				var camImageBitmapdata:BitmapData = new BitmapData(cameraMC.width,cameraMC.height,false,0);
+				camImageBitmapdata.draw(cameraMC);
+				//foundedObject.bitmapData = blackAndWightBitmapData.clone() ;
+				
+				var images:Vector.<BitmapData> = BitmapEffect.matchImages(blackAndWightBitmapData,imageRect,areaRect,objectRect,correctColorBitmapData);
+				
+				
+				foundedObject.bitmapData = images[0] ;
+				
 				if(debug)
 				{
 					cameraFrame.bitmapData = camBitData ;
 				}
-				arManager.compair(camBitData);
+				arManager.compair(images[0]);
 				camBitData.unlock();
 			}
 		}
+		
+		private function scaleRect(rect:Rectangle,rectScale:Number=1):Rectangle
+		{
+			rect.x = rect.x*rectScale ;
+			rect.y = rect.y*rectScale ;
+			rect.width = rect.width*rectScale ;
+			rect.height = rect.height*rectScale ;
+			return rect ;
+		}
+			
 		
 		//Debug function
 		protected function addOne(event:MouseEvent):void
