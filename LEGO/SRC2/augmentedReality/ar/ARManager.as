@@ -18,7 +18,7 @@ package augmentedReality.ar
 	[Event(name="MATCH", type="augmentedReality.ar.CompairEvent")]
 	public class ARManager extends Sprite
 	{
-		public static const debug:Boolean = true ;
+		public static const debug:Boolean = false ;
 		
 		public static var debug_tested_index:uint = 0 ;
 		

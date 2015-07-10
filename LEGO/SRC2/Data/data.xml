@@ -36,7 +36,7 @@
 		<image></image>
 		<content w="250" h="250"></content>
 		<links>
-			<!--link level="" name="8" id="ar_8" icon="Data/qrs/08.png"/>
+			<link level="" name="8" id="ar_8" icon="Data/qrs/08.png"/>
 			<link level="" name="11" id="ar_11" icon="Data/qrs/11.png"/>
 			<link level="" name="14" id="ar_14" icon="Data/qrs/14.png"/>
 			<link level="" name="15" id="ar_15" icon="Data/qrs/15.png"/>
@@ -61,12 +61,12 @@
 			<link level="" name="51" id="ar_51" icon="Data/qrs/51.png"/>
 			<link level="" name="52" id="ar_52" icon="Data/qrs/52.png"/>
 			<link level="" name="53" id="ar_53" icon="Data/qrs/53.png"/>
-			<link level="" name="54" id="ar_54" icon="Data/qrs/54.png"/-->
+			<link level="" name="54" id="ar_54" icon="Data/qrs/54.png"/>
 			<link level="" name="55" id="ar_55" icon="Data/qrs/55.png"/>
 			<link level="" name="60" id="ar_60" icon="Data/qrs/60.png"/>
-			<!--link level="" name="64" id="ar_64" icon="Data/qrs/64.png"/>
+			<link level="" name="64" id="ar_64" icon="Data/qrs/64.png"/>
 			<link level="" name="65" id="ar_65" icon="Data/qrs/65.png"/>
-			<link level="" name="66" id="ar_66" icon="Data/qrs/66.png"/-->
+			<link level="" name="66" id="ar_66" icon="Data/qrs/66.png"/>
 		</links>
 	</page>
 	
