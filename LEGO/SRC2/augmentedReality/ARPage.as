@@ -100,8 +100,8 @@ package augmentedReality
 			//movedImageMC = Obj.get("croped_image_box_mc",cameraContainerMC);
 				//movedImageMC.visible = false ;
 			
-			cW = imageAreaMC.width ;//cameraMC.width ;
-			cH = imageAreaMC.height ;//cameraMC.height ;
+			cW = cameraMC.width ;//cameraMC.width ;
+			cH = cameraMC.height ;//cameraMC.height ;
 			
 			//debug line
 				//cam = new MTeamCamera(cameraMC);
@@ -242,6 +242,8 @@ package augmentedReality
 				
 				//trace("camBitData : "+camBitData.width);
 				
+				foundedObject.bitmapData = camBitData.clone() ;
+				
 				var correctColorBitmapData:BitmapData = BitmapEffect.colorBalanceGrayScale(camBitData);
 				var blackAndWightBitmapData:BitmapData = BitmapEffect.blackAndWhite(correctColorBitmapData);
 				
@@ -253,7 +255,7 @@ package augmentedReality
 				var images:Vector.<BitmapData> = BitmapEffect.matchImages(blackAndWightBitmapData,imageRect,areaRect,objectRect,correctColorBitmapData);
 				
 				
-				foundedObject.bitmapData = images[0] ;
+				
 				
 				if(debug)
 				{
