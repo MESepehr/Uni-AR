@@ -224,7 +224,7 @@ package augmentedReality
 		
 		protected function compairAll(event:Event):void
 		{
-			if(true || activeFlag)
+			if(activeFlag)
 			{
 				var imageRect:Rectangle = imageAreaMC.getBounds(cameraContainerMC) ;
 				imageRect.x = imageRect.x -cameraMC.x ;
