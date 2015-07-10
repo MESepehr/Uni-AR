@@ -29,7 +29,7 @@ package augmentedReality
 	
 	public class ARPage extends MovieClip implements DisplayPageInterface
 	{
-		private const debug:Boolean = true ;
+		private const debug:Boolean = false ;
 		
 		private var arManager:ARManager ;
 		
@@ -71,9 +71,14 @@ package augmentedReality
 
 		private var cameraContainerMC:MovieClip;
 		
+		private var debugAreaMc:MovieClip ;
+		
 		public function ARPage()
 		{
 			super();
+			
+			debugAreaMc = Obj.get("debug_area_mc",this);
+			debugAreaMc.visible = false ;
 			
 			var bitData:BitmapData = new BitmapData(10,10,false,0xff0000);
 			foundedObject = new Bitmap(bitData);
@@ -100,8 +105,8 @@ package augmentedReality
 			//movedImageMC = Obj.get("croped_image_box_mc",cameraContainerMC);
 				//movedImageMC.visible = false ;
 			
-			cW = cameraMC.width ;//cameraMC.width ;
-			cH = cameraMC.height ;//cameraMC.height ;
+			cW = imageAreaMC.width ;//cameraMC.width ;
+			cH = imageAreaMC.height ;//cameraMC.height ;
 			
 			//debug line
 				//cam = new MTeamCamera(cameraMC);
@@ -120,9 +125,9 @@ package augmentedReality
 			allContentButtonMC.buttonMode = true ;
 			allContentButtonMC.addEventListener(MouseEvent.CLICK,openAll);
 			
-			cameraContainerMC.addChild(foundedObject);
-			foundedObject.x = imageAreaMC.x ;
-			foundedObject.y = imageAreaMC.y ;
+			this.addChild(foundedObject);
+			foundedObject.x = debugAreaMc.x ;
+			foundedObject.y = debugAreaMc.y ;
 			
 		}
 		
@@ -157,7 +162,6 @@ package augmentedReality
 		{
 			// TODO Auto-generated method stub
 			//myLinkCollector.deleteOldLinks();
-			trace("linkd updated");
 			var pageData:PageData = new PageData();
 			pageData.links1 = myLinkCollector.getListsByOrder();
 			myDynamicLinks.setUp(pageData);
@@ -173,21 +177,25 @@ package augmentedReality
 			ImagesW = pageData.contentW;
 			ImagesH = pageData.contentH;
 			
+			camScalePrecent = ImagesW/cW; 
+			
+			var camWidth:Number = cameraMC.width*camScalePrecent ;
+			var camHeight:Number = cameraMC.height*camScalePrecent ;
+			
 			//trace("ImagesW : "+ImagesW);
 		//	trace("ImagesH : "+ImagesH);
 			
-			camScalePrecent = ImagesW/cW; 
 			
-			smoother = new Smoother(ImagesW,ImagesH,3);
+			smoother = new Smoother(camWidth,camHeight,3);
 			
-			camBitData = new BitmapData(ImagesW,ImagesH,false);
+			camBitData = new BitmapData(camWidth,camHeight,false);
 			if(debug)
 			{
 				cameraFrame = new Bitmap(camBitData);
 			}
 			arManager = new ARManager(ImagesW,ImagesH);
 			arManager.addEventListener(CompairEvent.MATCH,matchFounds);
-			this.addChild(arManager);
+			//this.addChild(arManager);
 			if(debug)
 			{
 				this.addChild(cameraFrame);
@@ -209,7 +217,7 @@ package augmentedReality
 			if(e.difrences<12000/*Number(maxdifrence_txt.text)*/)
 			{
 				myLinkCollector.addLink(e.linkData,e.difrences);
-				trace("Link found : "+e.linkData.name+' > difences are : '+e.difrences);
+				//trace("Link found : "+e.linkData.name+' > difences are : '+e.difrences);
 			}
 			//difrences_txt.text = e.difrences.toString();
 		}
@@ -242,7 +250,6 @@ package augmentedReality
 				
 				//trace("camBitData : "+camBitData.width);
 				
-				foundedObject.bitmapData = camBitData.clone() ;
 				
 				var correctColorBitmapData:BitmapData = BitmapEffect.colorBalanceGrayScale(camBitData);
 				var blackAndWightBitmapData:BitmapData = BitmapEffect.blackAndWhite(correctColorBitmapData);
@@ -254,8 +261,7 @@ package augmentedReality
 				
 				var images:Vector.<BitmapData> = BitmapEffect.matchImages(blackAndWightBitmapData,imageRect,areaRect,objectRect,correctColorBitmapData);
 				
-				
-				
+				foundedObject.bitmapData = images[0].clone() ;
 				
 				if(debug)
 				{
