@@ -25,6 +25,7 @@ package
 					H:Number = 500 ;
 		
 		private var cameraSmoother:Smoother ;
+		private var cameraSmoother2:Smoother ;
 		
 		private var difrenceTracker:DifrencFinder ;
 		
@@ -47,6 +48,7 @@ package
 			
 			//Set the filter 1, smoother
 			cameraSmoother = new Smoother(W,H);
+			cameraSmoother2 = new Smoother(W,H);
 			
 			//Image difrences
 			difrenceTracker = new DifrencFinder(W,H);
@@ -74,11 +76,15 @@ package
 			//Black and Wight
 			BitmapEffect.blackAndWhite(debugBitmapData,true);
 			//Clean pixels
-			//Check the difrences
-			difrenceTracker.getDifrence(debugBitmapData);
 			/*secondBitmap.bitmapData = difrenceTracker.lastBitmap ;*/
-		//	BitmapEffect.clearBlackWhitheImage(debugBitmapData,2,true,3,true);
-		//BitmapEffect.clearBlackWhitheImage(debugBitmapData,2,true,3,true);
+			BitmapEffect.clearBlackWhitheImage(debugBitmapData,1,false,3,true);
+			BitmapEffect.clearBlackWhitheImage(debugBitmapData,1,false,3,true);
+			BitmapEffect.clearBlackWhitheImage(debugBitmapData,1,false,3,true);
+			//Check the difrences
+					difrenceTracker.getDifrence(debugBitmapData);
+					
+					debugBitmapData.draw(cameraSmoother2.smooth(debugBitmapData));
+			//BitmapEffect.clearBlackWhitheImage(debugBitmapData,1,false,3,true);
 		//BitmapEffect.clearBlackWhitheImage(debugBitmapData,2,false,3,true);
 			
 			
