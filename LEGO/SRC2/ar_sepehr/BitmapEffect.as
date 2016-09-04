@@ -110,9 +110,17 @@ package ar_sepehr
 		}
 		
 		
-		public static function blackAndWhite(sourceBitmap:BitmapData):BitmapData
+		public static function blackAndWhite(sourceBitmap:BitmapData,changeTheBitmapItself:Boolean=false):BitmapData
 		{
-			var newBitmap:BitmapData = sourceBitmap.clone() ;
+			var newBitmap:BitmapData ;
+			if(changeTheBitmapItself)
+			{
+				newBitmap = sourceBitmap;
+			}
+			else
+			{
+				newBitmap = sourceBitmap.clone();
+			}
 			
 			var histo:Vector.<Vector.<Number>> = newBitmap.histogram();
 			
@@ -130,7 +138,7 @@ package ar_sepehr
 			return newBitmap ;
 		}
 		
-		public static function clearBlackWhitheImage(sourceBitmap:BitmapData,times:uint,mainIsBlack:Boolean=true,pixels:uint=3):BitmapData
+		public static function clearBlackWhitheImage(sourceBitmap:BitmapData,times:uint,mainIsBlack:Boolean=true,pixels:uint=3,changeTheSourceImage:Boolean=false):BitmapData
 		{
 			var i:int,j:int;
 			var pixelArray:Array = [] ;
@@ -142,7 +150,15 @@ package ar_sepehr
 				}
 			}
 			var filter:ConvolutionFilter = new ConvolutionFilter(pixels,pixels,pixelArray,pixels*pixels) ;
-			var newBitmap:BitmapData = sourceBitmap.clone() ;
+			var newBitmap:BitmapData ;
+			if(changeTheSourceImage)
+			{
+				newBitmap = sourceBitmap;
+			}
+			else
+			{
+				newBitmap = sourceBitmap.clone();
+			}
 			for(i = 0 ; i<times ; i++)
 			{
 				//2 time somoothing
