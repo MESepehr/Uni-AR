@@ -1,5 +1,6 @@
 package eyeTrack.camera
 {
+	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.media.Camera;
@@ -23,7 +24,8 @@ package eyeTrack.camera
 			vid = new Video(Width,Height);
 			this.addChild(vid);
 			
-			this.addEventListener(Event.ADDED_TO_STAGE,onAdded);
+			//this.addEventListener(Event.ADDED_TO_STAGE,onAdded);
+			onAdded(null);
 		}
 		
 		protected function onAdded(event:Event):void
@@ -32,6 +34,11 @@ package eyeTrack.camera
 			//cam.setMode(Math.floor(W),Math.floor(H),24,true);
 			//cam.setQuality(0,100);
 			vid.attachCamera(cam);
+		}
+		
+		public function getBitmap(drawableBitmap:BitmapData):void
+		{
+			drawableBitmap.draw(vid);
 		}
 	}
 }
