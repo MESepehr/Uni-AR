@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<application xmlns="http://ns.adobe.com/air/application/18.0">
+<application xmlns="http://ns.adobe.com/air/application/17.0">
   <id>com.mteamapps.patternMatching</id>
   <versionNumber>1.0</versionNumber>
   <filename>Pattern matching</filename>
   <description/>
-  
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <!-- To localize the description, use the following format for the description element.<description><text xml:lang="en">English App description goes here</text><text xml:lang="fr">French App description goes here</text><text xml:lang="ja">Japanese App description goes here</text></description>-->
+<!-- To localize the description, use the following format for the description element.<description><text xml:lang="en">English App description goes here</text><text xml:lang="fr">French App description goes here</text><text xml:lang="ja">Japanese App description goes here</text></description>-->
   <name>Pattern matching</name>
-  
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <!-- To localize the name, use the following format for the name element.<name><text xml:lang="en">English App name goes here</text><text xml:lang="fr">French App name goes here</text><text xml:lang="ja">Japanese App name goes here</text></name>-->
+<!-- To localize the name, use the following format for the name element.<name><text xml:lang="en">English App name goes here</text><text xml:lang="fr">French App name goes here</text><text xml:lang="ja">Japanese App name goes here</text></name>-->
   <copyright/>
   <initialWindow>
     <content>AR-part.swf</content>
@@ -50,46 +26,13 @@
     <resizable>true</resizable>
   </initialWindow>
   <icon>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <image36x36>AppIconsForPublish/36.png</image36x36>
     <image48x48>AppIconsForPublish/48.png</image48x48>
     <image72x72>AppIconsForPublish/72.png</image72x72>
   </icon>
-  
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <!--icon>
+<!--icon>
     <image16x16>AppIconsForPublish/16.png</image16x16>
     <image29x29>AppIconsForPublish/29.png</image29x29>
     <image32x32>AppIconsForPublish/32.png</image32x32>
@@ -121,29 +64,19 @@
     <requestedDisplayResolution>high</requestedDisplayResolution>
   </iPhone>
   <android>
-    <manifestAdditions><![CDATA[<manifest>
+    <manifestAdditions>
+      <![CDATA[<manifest>
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.CAMERA"/>
-</manifest>]]></manifestAdditions>
+</manifest>]]>
+    </manifestAdditions>
   </android>
-
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-<!--extensions>
+  <!--extensions>
     <extensionID>com.janumedia.ane.pdfreader</extensionID>
   </extensions-->
   <versionLabel/>
