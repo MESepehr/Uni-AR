@@ -52,9 +52,17 @@ package ar_sepehr
 			return newBitmap ;
 		}
 		
-		public static function colorBalanceGrayScale(colorBimtap:BitmapData):BitmapData
+		public static function colorBalanceGrayScale(colorBimtap:BitmapData,changeBitmapItserlf=false):BitmapData
 		{
-			var newBitmap:BitmapData = colorBimtap.clone();
+			var newBitmap:BitmapData;
+			if(changeBitmapItserlf)
+			{
+				newBitmap = colorBimtap ;
+			}
+			else
+			{
+				newBitmap = colorBimtap.clone();
+			}
 			var histo:Vector.<Vector.<Number>> = newBitmap.histogram();
 			
 			var Rsum:Number = sumVector(histo[0]);
