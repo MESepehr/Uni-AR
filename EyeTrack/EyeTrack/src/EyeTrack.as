@@ -56,6 +56,12 @@ package
 			debugBitmapData.draw(cameraSmoother.smooth(debugBitmapData));
 			//GrayScale image
 			BitmapEffect.colorBalanceGrayScale(debugBitmapData,true);
+			//Black and Wight
+			BitmapEffect.blackAndWhite(debugBitmapData,true);
+			//Clean pixels
+			BitmapEffect.clearBlackWhitheImage(debugBitmapData,2,true,3,true);
+			BitmapEffect.clearBlackWhitheImage(debugBitmapData,2,true,3,true);
+			BitmapEffect.clearBlackWhitheImage(debugBitmapData,2,false,3,true);
 				
 			debugBitmapData.unlock();
 		}
