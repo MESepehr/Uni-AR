@@ -33,6 +33,10 @@ package
 			//Create debug bitmap
 			debugBitmapData = new BitmapData(W,H);
 			debugBitmap = new Bitmap(debugBitmapData);
+			
+			debugBitmap.scaleX = stage.stageWidth/W;
+			debugBitmap.scaleY = stage.stageHeight/H;
+			
 			this.addChild(debugBitmap);
 			
 			//Set the filter 1, smoother
