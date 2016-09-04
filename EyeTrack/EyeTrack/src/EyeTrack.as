@@ -5,6 +5,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
+	import ar_sepehr.BitmapEffect;
 	import ar_sepehr.Smoother;
 	
 	import eyeTrack.camera.LightCamera;
@@ -49,9 +50,12 @@ package
 		protected function updateImage(event:Event):void
 		{
 			debugBitmapData.lock();
-			
+			//Draw camera
 			camera.getBitmap(debugBitmapData);
+			//Smooth the image
 			debugBitmapData.draw(cameraSmoother.smooth(debugBitmapData));
+			//GrayScale image
+			BitmapEffect.colorBalanceGrayScale(debugBitmapData,true);
 				
 			debugBitmapData.unlock();
 		}
