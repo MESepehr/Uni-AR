@@ -35,7 +35,8 @@ package eyeTrack.camera
 			//cam.setQuality(0,100);
 			vid.attachCamera(cam);
 		}
-		
+
+		/**get bitmap function*/
 		public function getBitmap(drawableBitmap:BitmapData):void
 		{
 			drawableBitmap.draw(vid);
